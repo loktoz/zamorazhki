@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заморажки: Высшая Математика</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            max-width: 850px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+        h2 {
+            color: #34495e;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+        .example-box {
+            background-color: #f8fafc;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .example-box.paradox {
+            border-left-color: #e74c3c;
+            background-color: #fff5f5;
+        }
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 18px;
+            font-weight: bold;
+            color: #c0392b;
+            background: #f1f2f6;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .matrix {
+            display: inline-block;
+            vertical-align: middle;
+            border-left: 2px solid #000;
+            border-right: 2px solid #000;
+            padding: 0 5px;
+            margin: 0 5px;
+            font-family: serif;
+            font-size: 18px;
+        }
+        .matrix-row {
+            padding: 2px 0;
+        }
+        .matrix-cell {
+            display: inline-block;
+            width: 25px;
+            text-align: center;
+            margin: 0 5px;
+        }
+        ol {
+            padding-left: 20px;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .result {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .result.red-text {
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Заморажки</h1>
+    <p style="text-align: center; color: #7f8c8d;">Интерактивный разбор сложных математических задач и удивительных парадоксов.</p>
+
+    <!-- Раздел 1 -->
+    <h2>1. Линейная алгебра: Определители матриц</h2>
+    <div class="example-box">
+        <p><b>Пример 1: Матрица 2х2</b></p>
+        <p>Вычислить определитель матрицы А:</p>
+        <div>
+            А = 
+            <div class="matrix">
+                <div class="matrix-row"><span class="matrix-cell">3</span><span class="matrix-cell">5</span></div>
+                <div class="matrix-row"><span class="matrix-cell">2</span><span class="matrix-cell">4</span></div>
+            </div>
+        </div>
+        <p><b>Решение:</b> Перемножаем крест-накрест элементы главной диагонали и вычитаем произведение побочной.</p>
+        <ol>
+            <li>Главная диагональ: 3 · 4 = 12.</li>
+            <li>Побочная диагональ: 2 · 5 = 10.</li>
+            <li>Разность результатов: 12 - 10 = 2.</li>
+        </ol>
+        <p class="result">Ответ: det(A) = 2</p>
+    </div>
+
+    <div class="example-box">
+        <p><b>Пример 2: Матрица с отрицательными числами</b></p>
+        <p>Вычислить определитель матрицы B:</p>
+        <div>
+            B = 
+            <div class="matrix">
+                <div class="matrix-row"><span class="matrix-cell">1</span><span class="matrix-cell">-3</span></div>
+                <div class="matrix-row"><span class="matrix-cell">4</span><span class="matrix-cell">2</span></div>
+            </div>
+        </div>
+        <p><b>Решение:</b> Будьте внимательны со знаками минус при вычитании.</p>
+        <ol>
+            <li>Главная диагональ: 1 · 2 = 2.</li>
+            <li>Побочная диагональ: 4 · (-3) = -12.</li>
+            <li>Вычитаем отрицательное число (минус на минус дает плюс): 2 - (-12) = 2 + 12 = 14.</li>
+        </ol>
+        <p class="result">Ответ: det(B) = 14</p>
+    </div>
+
+    <!-- Раздел 2 -->
+    <h2>2. Математический анализ: Производные и Пределы</h2>
+    <div class="example-box">
+        <p><b>Пример 1: Степенная функция и константа</b></p>
+        <p>Найти производную функции: у = 3x³ + 5x² - 7.</p>
+        <p><b>Решение:</b> Применяем правило (xⁿ)' = n · xⁿ⁻¹ для каждого слагаемого.</p>
+        <ol>
+            <li>Первая часть: (3x³)' = 3 · 3x² = 9x².</li>
+            <li>Вторая часть: (5x²)' = 5 · 2x = 10x.</li>
+            <li>Число без икса зануляется: (7)' = 0.</li>
+        </ol>
+        <div class="formula">y' = 9x² + 10x</div>
+        <p class="result">Ответ: y' = 9x² + 10x</p>
+    </div>
+
+    <div class="example-box">
+        <p><b>Пример 2: Производная с корнем и тригонометрией</b></p>
+        <p>Найти производную функции: y = √x + sin(x).</p>
+        <p><b>Решение:</b> Используем табличные формулы для корня и синуса.</p>
+        <ol>
+            <li>Производная корня по таблице равна: (√x)' = 1 / (2√x).</li>
+            <li>Производная синуса превращается в косинус: (sin(x))' = cos(x).</li>
+        </ol>
+        <div class="formula">y' = 1 / (2√x) + cos(x)</div>
+        <p class="result">Ответ: y' = 1 / (2√x) + cos(x)</p>
+    </div>
+
+    <div class="example-box">
+        <p><b>Пример 3: Раскрытие неопределенности в пределе (lim)</b></p>
+        <p>Вычислить предел при x стремящемся к 3: lim (x² - 9) / (x - 3).</p>
+        <p><b>Решение:</b> Если подставить x = 3, получится деление 0/0. Разложим числитель на множители.</p>
+        <ol>
+            <li>Разложим числитель по разности квадратов: (x² - 9) = (x - 3)(x + 3).</li>
+            <li>Сокращаем одинаковую скобку (x - 3) в числителе и знаменателе.</li>
+            <li>Остается простой предел: lim (x + 3). Подставляем x = 3: 3 + 3 = 6.</li>
+        </ol>
+        <div class="formula">Ответ: 6</div>
+    </div>
+
+    <!-- Раздел 3 -->
+    <h2>3. Интегралы и Дифференциальные уравнения</h2>
+    <div class="example-box">
+        <p><b>Пример 1: Многочлен</b></p>
+        <p>Найти интеграл: ∫(4x³ + 2x) dx.</p>
+        <p><b>Решение:</b> Пользуемся правилом ∫xⁿ dx = (xⁿ⁺¹) / (n + 1).</p>
+        <ol>
+            <li>Первое слагаемое: ∫4x³ dx = 4 · (x⁴ / 4) = x⁴.</li>
+            <li>Второе слагаемое: ∫2x dx = 2 · (x² / 2) = x².</li>
+            <li>В конце обязательно дописываем букву + C.</li>
+        </ol>
+        <div class="formula">∫(4x³ + 2x) dx = x⁴ + x² + C</div>
+        <p class="result">Ответ: x⁴ + x² + C</p>
+    </div>
+
+    <div class="example-box">
+        <p><b>Пример 2: Интеграл от экспоненты</b></p>
+        <p>Найти интеграл: ∫(eˣ + 3) dx.</p>
+        <p><b>Решение:</b></p>
+        <ol>
+            <li>Экспонента при интегрировании не меняется: ∫eˣ dx = eˣ.</li>
+            <li>Интеграл от числа получает к себе в пару x: ∫3 dx = 3x.</li>
+        </ol>
+        <div class="formula">∫(eˣ + 3) dx = eˣ + 3x + C</div>
+        <p class="result">Ответ: eˣ + 3x + C</p>
+    </div>
+
+    <div class="example-box">
+        <p><b>Пример 3: Дифференциальное уравнение 1-го порядка</b></p>
+        <p>Решить уравнение: dy / dx = 2x.</p>
+        <p><b>Решение:</b> Это уравнение с разделяющимися переменными.</p>
+        <ol>
+            <li>Умножим обе части на dx: dy = 2x dx.</li>
+            <li>Навесим знаки интеграла на обе стороны: ∫dy = ∫2x dx.</li>
+            <li>Берем интегралы: левая превращается в y, правая — в x² + C.</li>
+        </ol>
+        <div class="formula">y = x² + C</div>
+        <p class="result">Ответ: y = x² + C</p>
+    </div>
+
+    <!-- Раздел 4 -->
+    <h2>4. Комплексные числа и Векторы</h2>
+    <div class="example-box">
+        <p><b>Пример 1: Умножение комплексных чисел</b></p>
+        <p>Перемножить два числа: z₁ = 2 + 3i и z₂ = 1 - i.</p>
+        <p><b>Решение:</b> Перемножаем скобки, учитывая, что i² = -1.</p>
+        <ol>
+            <li>Раскрываем скобки: (2 + 3i) · (1 - i) = 2 - 2i + 3i - 3i² = 2 + i - 3i².</li>
+            <li>Заменяем i² на (-1): 2 + i - 3 · (-1) = 2 + i + 3.</li>
+            <li>Складываем числа: 2 + 3 = 5.</li>
+        </ol>
+        <div class="formula">Ответ: z = 5 + i</div>
+    </div>
+
+    <div class="example-box">
+        <p><b>Пример 2: Скалярное произведение векторов</b></p>
+        <p>Найти скалярное произведение векторов a = {3; -1; 2} и b = {4; 2; -5}.</p>
+        <p><b>Решение:</b> Попарно умножаем координаты X, Y, Z и складываем результаты.</p>
+        <ol>
+            <li>Умножаем координаты: (3 · 4) + ((-1) · 2) + (2 · (-5)).</li>
+            <li>Считаем: 12 - 2 - 10 = 0.</li>
+        </ol>
+        <p class="result">Ответ: a · b = 0</p>
+    </div>
+
+    <!-- Раздел 5 -->
+    <h2>5. Теория вероятностей</h2>
+    <div class="example-box">
+        <p><b>Пример 1: Классическое определение вероятности</b></p>
+        <p>В коробке лежат 5 синих, 3 красных и 2 зеленых шара. Какова вероятность вытащить наугад именно красный шар?</p>
+        <p><b>Решение:</b> Вероятность — это отношение количества нужных исходов к общему числу исходов (P = m / n).</p>
+        <ol>
+            <li>Считаем общее число шаров: 5 + 3 + 2 = 10 (это n).</li>
+            <li>Число подходящих (красных) шаров: 3 (это m).</li>
+            <li>Находим вероятность по формуле P = 3 / 10.</li>
+        </ol>
+        <div class="formula">P = 0.3 (или 30%)</div>
+        <p class="result">Ответ: 0.3</p>
+    </div>
+
+    <!-- Раздел Парадоксов ТЕПЕРЬ В САМОМ НИЗУ -->
+    <h2>6. Секретный архив: Математические иллюзии</h2>
+    <div class="example-box paradox">
+        <p><b>Парадокс: Доказательство равенства 2 + 2 = 5</b></p>
